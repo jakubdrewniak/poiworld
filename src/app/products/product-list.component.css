@@ -2,3 +2,8 @@
     width: 80%;
     margin: 10px auto 30px auto;
 }
+
+td img {
+    width: 50px;
+    maring: 2px;
+}
