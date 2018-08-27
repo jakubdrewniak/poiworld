@@ -44,11 +44,15 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {this.productService.getProducts().subscribe(
+      //calls getProducts method from service and kicks off get request
       products => {
         this.products = products;
         this.filteredProducts = this.products;
       },
+      //we could not use curly brackets if it wasnt two line code; 
+      //at first we get products and then we set filteredProducts to products
       error => this.errorMessage = <any>error
+      //<any> is casting operator; its casting error form observable
     );
     }
 }
