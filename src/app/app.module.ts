@@ -9,7 +9,8 @@ import { StarComponent } from './shared/star.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './products/product-detail.component';
-import { WelcomeComponent } from './home/welcome.component'
+import { WelcomeComponent } from './home/welcome.component';
+import { RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { WelcomeComponent } from './home/welcome.component'
     BrowserModule,
     FormsModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'products', component: ProductListComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
