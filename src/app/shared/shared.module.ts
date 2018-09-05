@@ -6,7 +6,7 @@ import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     StarComponent,
