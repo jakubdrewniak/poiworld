@@ -1,0 +1,15 @@
+@import 'src/sass/_variables';
+
+nav {    
+    padding-bottom: 0 !important;
+}
+
+.nav-link.active {
+    background-color: #f7f7f7 !important;
+    border-bottom: 1px solid  #f7f7f7  !important;
+}
+
+ul {
+    margin-left: 50px;
+    border-bottom: 0 !important;
+}
