@@ -10,27 +10,38 @@ import { ProductService } from './product.service';
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Choose your prop!';
     showImage: boolean = false;
+    //initial state of showImage- if its false, images are hidden;
     errorMessage = '';
     
     _listFilter: string;
+    //value for the method for two way binding  (string typed by user will appear)
     get listFilter(): string {
         return this._listFilter;
     }
+    //if app need _listFilter, gets it from here
     set listFilter(value: string) {
         this._listFilter = value;
         this.filteredProducts = this.listFilter ? this.performFilter(value) : this.products;
     }
+    //method takes parameter- <input type='text' [(ngModel)]='listFilter' /> and sets 
+    //our vriable to typed string; it also sets filteredProducts to 
+    //this.performFilter(value) and kicks performFilter method; if there is no value,
+    //filteredProducts is products
 
 
     filteredProducts: IProduct[];
     products: IProduct[] = [];
+//set variables filtered products and products which is empty array
     
     constructor(private productService: ProductService) {
       }
+    //dependency injection of service
 
     onRatingClicked(message: string): void {
-      this.pageTitle = 'Product list ' + message
+      this.pageTitle = message
     }
+//message is emmited from star.component which is nested component; 
+//method listens to event by event binding (ratingClicked)='onRatingClicked($event)';
 
     performFilter(filterBy: string): IProduct[] {
       filterBy = filterBy.toLocaleLowerCase();
@@ -41,6 +52,7 @@ export class ProductListComponent implements OnInit {
     toggleImage(): void {
       this.showImage = !this.showImage;
     }
+//initial state of showImage is false; when clicked, sets it to true with *ngIf='showImage'
 
     ngOnInit(): void {this.productService.getProducts().subscribe(
       //calls getProducts method from service and kicks off get request
