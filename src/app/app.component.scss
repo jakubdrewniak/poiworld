@@ -5,8 +5,8 @@ nav {
 }
 
 .nav-link.active {
-    background-color: #f7f7f7 !important;
-    border-bottom: 1px solid  #f7f7f7  !important;
+    background-color: $bpcard-color !important;
+    border-bottom: 1px solid  $bpcard-color  !important;
 }
 
 ul {

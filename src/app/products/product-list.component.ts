@@ -8,7 +8,7 @@ import { ProductService } from './product.service';
 })
 
 export class ProductListComponent implements OnInit {
-    pageTitle: string = 'Product list';
+    pageTitle: string = 'Choose your prop!';
     showImage: boolean = false;
     errorMessage = '';
     

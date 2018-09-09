@@ -1,8 +1,24 @@
+@import 'src/sass/_variables';
+
 .card {
     margin: 0px auto 30px auto;
 }
 
-td img {
-    width: 50px;
-    margin: 2px;
+#proditem {
+    border: 1.5px solid $bpcardborder-color;
+    border-radius: 0.25rem; 
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    :nth-child(2) {
+        font-size: 10px;
+    }
+    >:last-child {
+        img {
+            height: 100px;
+            width: 100px;
+        }
+    }
 }
+
+
