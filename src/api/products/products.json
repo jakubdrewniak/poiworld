@@ -7,7 +7,7 @@
         "description": "White stretchy poi",
         "price": 4.99,
         "starRating": 2.9,
-        "imageUrl": "../assets/whitesock.jpg"
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/whitesock.jpg"
     },
     {
         "productId": 2,
