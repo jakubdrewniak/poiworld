@@ -4,6 +4,10 @@ nav {
     padding-bottom: 0 !important;
 }
 
+nav .nav-pills {
+    margin-bottom: 2px;
+}
+
 .nav-link.active {
     background-color: $bpcard-color !important;
     border-bottom: 1px solid  $bpcard-color  !important;
@@ -12,4 +16,9 @@ nav {
 ul {
     margin-left: 50px;
     border-bottom: 0 !important;
+}
+
+.btn-outline-primary {
+    position: absolute;
+    right: 150px;
 }

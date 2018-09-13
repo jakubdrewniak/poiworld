@@ -7,12 +7,14 @@ import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule} from '@angular/router';
 import { ProductModule } from './products/product.module';
 import { IntroComponent } from './intro/intro.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    IntroComponent
+    IntroComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { IntroComponent } from './intro/intro.component';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'intro', component: IntroComponent },
+      { path: 'cart', component: CartComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ], {useHash: true}),

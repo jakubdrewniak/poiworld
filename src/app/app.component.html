@@ -5,6 +5,9 @@
     <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/intro']">What is poi?</a></li>
     <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
   </ul>
+  <button class='btn btn-outline-primary' routerLinkActive='active' [routerLink]="['/cart']">
+    <i class="fa fa-shopping-cart"></i> My cart
+  </button>
 </nav>
 <div class='container'>
   <router-outlet></router-outlet>
