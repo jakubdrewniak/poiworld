@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StarComponent } from './star.component';
 import { FormsModule } from '@angular/forms';
 import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
+import { PoiTypePipe } from './poi-type.pipe';
+
 
 @NgModule({
   imports: [
@@ -10,13 +12,15 @@ import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
   ],
   declarations: [
     StarComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    PoiTypePipe
   ],
   exports: [
     StarComponent,
     CommonModule,
     FormsModule,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    PoiTypePipe
   ]
 })
 export class SharedModule { }

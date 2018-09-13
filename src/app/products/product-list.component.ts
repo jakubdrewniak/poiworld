@@ -40,8 +40,8 @@ export class ProductListComponent implements OnInit {
     onRatingClicked(message: string): void {
       this.pageTitle = message
     }
-//message is emmited from star.component which is nested component; 
-//method listens to event by event binding (ratingClicked)='onRatingClicked($event)';
+    //message is emmited from star.component which is nested component; 
+    //method listens to event by event binding (ratingClicked)='onRatingClicked($event)';
 
     performFilter(filterBy: string): IProduct[] {
       filterBy = filterBy.toLocaleLowerCase();
@@ -52,7 +52,7 @@ export class ProductListComponent implements OnInit {
     toggleImage(): void {
       this.showImage = !this.showImage;
     }
-//initial state of showImage is false; when clicked, sets it to true with *ngIf='showImage'
+    //initial state of showImage is false; when clicked, sets it to true with *ngIf='showImage'
 
     ngOnInit(): void {this.productService.getProducts().subscribe(
       //calls getProducts method from service and kicks off get request
@@ -62,6 +62,7 @@ export class ProductListComponent implements OnInit {
       },
       //we could not use curly brackets if it wasnt two line code; 
       //at first we get products and then we set filteredProducts to products
+      //remember to implement OnInit after class name
       error => this.errorMessage = <any>error
       //<any> is casting operator; its casting error form observable
     );

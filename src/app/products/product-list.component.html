@@ -23,7 +23,7 @@
         <div id='proditem' class='col-md-3' *ngFor='let product of filteredProducts'>
             <div><a [routerLink]="['/products', product.productId]">{{ product.productName }}</a></div>
             <div class='text-muted'>ID: {{ product.productCode | lowercase | convertToSpaces: '-' }}</div>
-            <div>{{ product.releaseDate }}</div>
+            <div>{{ product.type | poiType }}</div>
             <div>{{ product.price | currency:'USD':'symbol':'1.2-2'}}</div>
             <div>
                 <pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-star>

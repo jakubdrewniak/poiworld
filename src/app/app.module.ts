@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule} from '@angular/router';
 import { ProductModule } from './products/product.module';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +20,7 @@ import { ProductModule } from './products/product.module';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'intro', component: IntroComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ], {useHash: true}),
