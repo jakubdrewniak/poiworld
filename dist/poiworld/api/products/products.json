@@ -14,10 +14,89 @@
         "productName": "White and gold sock poi",
         "productCode": "SP-3587",
         "type": 3,
-        "description": "White stretchy poi",
-        "price": 4.99,
-        "starRating": 2.9,
-        "imageUrl": "../assets/geometricsock.jpg"
-    }
-    
+        "description": "White ang gold stretchy poi",
+        "price": 7.99,
+        "starRating": 3.5,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/geometricsock.jpg"
+    },
+    {
+        "productId": 3,
+        "productName": "White and blue maori poi",
+        "productCode": "SP-4237",
+        "type": 4,
+        "description": "Traditional maori poi",
+        "price": 69.99,
+        "starRating": 4.1,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/whitebluemaori.jpg"
+    },
+    {
+        "productId": 4,
+        "productName": "Juggling set",
+        "productCode": "SP-8546",
+        "type": 2,
+        "description": "Set of three contact poi, perfect to juggle",
+        "price": 99.99,
+        "starRating": 4.9,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/jugglingpoi.jpg"
+    },
+    {
+        "productId": 5,
+        "productName": "Blue and red contact poi",
+        "productCode": "SP-4279",
+        "type": 2,
+        "description": "Pair of blue and red contact poi",
+        "price": 79.99,
+        "starRating": 4.2,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/blueredcontact.jpg"
+    },
+    {
+        "productId": 6,
+        "productName": "\"Moonblaze\" Fire poi",
+        "productCode": "SP-3596",
+        "type": 1,
+        "description": "Big-head fire poi with contact handles",
+        "price": 149.99,
+        "starRating": 5.0,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/firepoi.jpg"
+    },
+    {
+        "productId": 7,
+        "productName": "Orange sock poi",
+        "productCode": "SP-45276",
+        "type": 3,
+        "description": "Pair of orange, durable poi",
+        "price": 59.99,
+        "starRating": 4.7,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/oragnesock.jpg"
+    },
+    {
+        "productId": 8,
+        "productName": "Blue red maori poi",
+        "productCode": "SP-4279",
+        "type": 4,
+        "description": "White and blue maori poi",
+        "price": 69.99,
+        "starRating": 3.7,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/blueredmaori.jpg"
+    },
+    {
+        "productId": 9,
+        "productName": "Blue red sock poi",
+        "productCode": "SP-4479",
+        "type": 4,
+        "description": "Blue and red sock poi",
+        "price": 9.99,
+        "starRating": 3.9,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/blueredsock.jpg"
+    },
+    {
+        "productId": 10,
+        "productName": "Yellow contact poi",
+        "productCode": "SP-2794",
+        "type": 2,
+        "description": "Yellow contact poi with purple handles",
+        "price": 89.99,
+        "starRating": 4.7,
+        "imageUrl": "https://raw.githubusercontent.com/jakubdrewniak/poiworld/master/src/assets/yellowcontact.jpg"
+    }   
 ]
