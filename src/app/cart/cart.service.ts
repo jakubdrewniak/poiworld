@@ -6,13 +6,13 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   })
 export class CartService {
 
-  private newCartSubject = new BehaviorSubject<string>(0);
+  private newCartSubject = new BehaviorSubject<object>({});
   currentCart = this.newCartSubject.asObservable();
 
   constructor() { }
 
 
-  addProp(item: number) {
+  addProp(item: object) {
     this.newCartSubject.next(item);
   }
 

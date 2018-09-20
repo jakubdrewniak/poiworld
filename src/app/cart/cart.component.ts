@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service'
+import { isEmpty } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -8,8 +9,9 @@ import { CartService } from './cart.service'
 })
 export class CartComponent implements OnInit {
 
-  item: number;
   
+  item: object = {};
+  empty;
 
   public pageTitle = 'Your props';
 
@@ -17,17 +19,11 @@ export class CartComponent implements OnInit {
     private cartService: CartService
   ) { }
 
-  ngOnInit() {
-    if (this.item >= 1) {
-      this.cartService.currentCart.subscribe(
-        item => this.item += item   
-      );
-    } else {
+  ngOnInit() {    
       this.cartService.currentCart.subscribe(
         item => this.item = item   
       );
-    };
-  
+      this.empty = (Object.keys(this.item).length === 0 && this.item.constructor === Object)         
     console.log(this.item)
   }
 

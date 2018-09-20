@@ -5,7 +5,8 @@
     <div class="card-body">
       <div class="container-fluid">
         <div class="text-center">
-          <p>Your cart is empty. Go to Products section and get some stuff. {{item}}</p>
+          <p *ngIf="empty">Your cart is empty. Go to Products section and get some stuff.</p>
+          <p *ngIf="!empty">You've chosen {{item.productName}}</p>
         </div>
       </div>
     </div>

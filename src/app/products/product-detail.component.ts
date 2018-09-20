@@ -44,8 +44,14 @@ export class ProductDetailComponent implements OnInit {
   }
 
   
-  toCart() {   
-    this.cartService.addProp(1);
+  toCart(data) {
+    if (isNaN(+Object.values(data))) {
+      alert('Declare number of goods');
+    } else {
+    this.product['quantity'] = +Object.values(data);
+    this.cartService.addProp(this.product);
+    console.log(this.product)
+    }
   }
     
 }
