@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IProduct } from './product';
 import { ProductService } from './product.service';
+import { CartService } from '../cart/cart.service'
+import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -18,7 +20,8 @@ export class ProductDetailComponent implements OnInit {
     //to get parameter FROM url to retreieve proper product we inject dependancy
     //of the service ActicatedRoute
     private router: Router,
-    private productService: ProductService) {
+    private productService: ProductService,
+    public cartService: CartService) {
   }
 
   ngOnInit() {
@@ -40,4 +43,9 @@ export class ProductDetailComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
+  
+  toCart() {   
+    this.cartService.addProp('message another');
+  }
+    
 }

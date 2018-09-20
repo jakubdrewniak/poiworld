@@ -51,11 +51,26 @@
     </button>
   
   <div id='buy' >    
-    Number of items:
-    <input type="text">
-        <button class='btn btn-outline-primary'>
-      <i class="fa fa-shopping-cart"></i> Add to cart
-    </button>
+    <form #newCartForm="ngForm" (ngSubmit)="toCart(newCartForm.value)">
+
+      <input
+            type="text"
+            class="form-control"
+            placeholder="No"
+            name="number"
+            ngModel
+            required>
+  
+      <button
+            class="btn btn-primary listing-button"
+            type="submit"
+            ng-show="addListing">
+              Add
+      </button>
+  
+    </form>
   </div>
-  </div>
+
+  
+ 
 </div>
