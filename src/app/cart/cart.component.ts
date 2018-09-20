@@ -8,7 +8,7 @@ import { CartService } from './cart.service'
 })
 export class CartComponent implements OnInit {
 
-  message: string;
+  item: number;
   
 
   public pageTitle = 'Your props';
@@ -18,10 +18,17 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cartService.currentMessage.subscribe(
-      message => this.message = message   
-    )
-    
+    if (this.item >= 1) {
+      this.cartService.currentCart.subscribe(
+        item => this.item += item   
+      );
+    } else {
+      this.cartService.currentCart.subscribe(
+        item => this.item = item   
+      );
+    };
+  
+    console.log(this.item)
   }
 
 }

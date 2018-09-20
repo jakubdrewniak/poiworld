@@ -45,7 +45,7 @@ export class ProductDetailComponent implements OnInit {
 
   
   toCart() {   
-    this.cartService.addProp('message another');
+    this.cartService.addProp(1);
   }
     
 }
