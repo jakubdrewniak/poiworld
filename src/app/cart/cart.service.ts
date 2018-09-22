@@ -9,11 +9,14 @@ export class CartService {
   private newCartSubject = new BehaviorSubject<object>({});
   currentCart = this.newCartSubject.asObservable();
 
-  constructor() { }
-
+  constructor() {     
+  }
 
   addProp(item: object) {
-    this.newCartSubject.next(item);
+    let order = [];
+    order.push(item);
+    this.newCartSubject.next(order);
+    
   }
 
 }
