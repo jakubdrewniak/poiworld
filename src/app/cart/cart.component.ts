@@ -10,6 +10,7 @@ export class CartComponent implements OnInit {
 
   
   order: object = [];
+  sum: number = 0; 
 
   public pageTitle = 'Your props';
   public cartMessage = 'Your cart is empty. Go to Products section and get some stuff'
@@ -23,8 +24,11 @@ export class CartComponent implements OnInit {
       this.cartService.currentCart.subscribe(
         item => this.order = item   
       );
+      for (let i=0; i < this.order.length; i++) {
+        this.sum += this.order[i]['price'] * this.order[i]['quantity'])
+      };
       if (this.order.length > 0) {this.cartMessage = 'Your order'}       
-    console.log(this.order);
+    console.log(this.order.length);
   }
 
  
