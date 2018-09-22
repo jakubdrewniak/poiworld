@@ -6,7 +6,32 @@
       <div class="container-fluid">
         <div class="text-center">
           <p *ngIf="empty">Your cart is empty. Go to Products section and get some stuff.</p>
-          <p *ngIf="!empty">You've chosen {{item.productName}}</p>
+          <p *ngIf="!empty">Your order</p>
+        </div>
+        <div class='table-responsive'>
+          <table class='table'
+                 *ngIf='order && order.length'>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Code</th>
+                <th>Price</th>
+                <th>Number of items</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let items of order'>
+                <td>
+                  <a [routerLink]="['/products', items.productId]">
+                    {{ items.productName }}
+                  </a>
+                </td>
+                <td>{{ items.productCode | lowercase | convertToSpaces: '-' }}</td>
+                <td>{{ items.price | currency:'USD':'symbol':'1.2-2' }}</td>
+                <td>{{ items.quantity }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

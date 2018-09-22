@@ -8,6 +8,7 @@ import { RouterModule} from '@angular/router';
 import { ProductModule } from './products/product.module';
 import { IntroComponent } from './intro/intro.component';
 import { CartComponent } from './cart/cart.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CartComponent } from './cart/cart.component';
     CartComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AngularFontAwesomeModule,
     HttpClientModule,

@@ -13,10 +13,20 @@ export class CartService {
   }
 
   addProp(item: object) {
-    let order = [];
+    let order = this.getOrder();
     order.push(item);
     this.newCartSubject.next(order);
+    this.setLocalStorageOrder(order);
     
+  }
+
+  public getOrder() {
+    let localStorageItem = JSON.parse(localStorage.getItem('mycart'));
+    return localStorageItem == null ? [] : localStorageItem.order;
+  }
+
+  private setLocalStorageOrder (order) {
+    localStorage.setItem('mycart', JSON.stringify({order}))
   }
 
 }

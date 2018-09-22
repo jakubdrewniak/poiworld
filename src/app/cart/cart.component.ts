@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service'
-import { isEmpty } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +9,7 @@ import { isEmpty } from 'rxjs/operators';
 export class CartComponent implements OnInit {
 
   
-  item: object = {};
+  order: object = {};
   empty;
 
   public pageTitle = 'Your props';
@@ -21,10 +20,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {    
       this.cartService.currentCart.subscribe(
-        item => this.item = item   
+        item => this.order = item   
       );
-      this.empty = (Object.keys(this.item).length === 0 && this.item.constructor === Object)         
-    console.log(this.item)
+      this.empty = (Object.keys(this.order).length === 0 && this.order.constructor === Object)         
+    console.log(this.order)
   }
 
 }
