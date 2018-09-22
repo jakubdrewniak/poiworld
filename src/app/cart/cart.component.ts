@@ -9,7 +9,7 @@ import { CartService } from './cart.service'
 export class CartComponent implements OnInit {
 
   
-  order: object = [];
+  order;
   sum: number = 0; 
 
   public pageTitle = 'Your props';
@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
         item => this.order = item   
       );
       for (let i=0; i < this.order.length; i++) {
-        this.sum += this.order[i]['price'] * this.order[i]['quantity'])
+        this.sum += this.order[i]['price'] * this.order[i]['quantity']
       };
       if (this.order.length > 0) {this.cartMessage = 'Your order'}       
     console.log(this.order.length);
