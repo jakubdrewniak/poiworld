@@ -5,8 +5,7 @@
     <div class="card-body">
       <div class="container-fluid">
         <div class="text-center">
-          <p *ngIf="empty">Your cart is empty. Go to Products section and get some stuff.</p>
-          <p *ngIf="!empty">Your order</p>
+          {{ cartMessage }}
         </div>
         <div class='table-responsive'>
           <table class='table'
@@ -17,6 +16,7 @@
                 <th>Code</th>
                 <th>Price</th>
                 <th>Number of items</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +29,9 @@
                 <td>{{ items.productCode | lowercase | convertToSpaces: '-' }}</td>
                 <td>{{ items.price | currency:'USD':'symbol':'1.2-2' }}</td>
                 <td>{{ items.quantity }}</td>
+                <td><button type="button" class="close" aria-label="Close" (click)="removeItem(items.productId)">
+                  <span aria-hidden="true">&times;</span>
+                </button></td>
               </tr>
             </tbody>
           </table>

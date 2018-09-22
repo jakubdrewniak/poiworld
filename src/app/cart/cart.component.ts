@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { CartService } from './cart.service'
 
 @Component({
@@ -9,21 +9,28 @@ import { CartService } from './cart.service'
 export class CartComponent implements OnInit {
 
   
-  order: object = {};
-  empty;
+  order: object = [];
 
   public pageTitle = 'Your props';
+  public cartMessage = 'Your cart is empty. Go to Products section and get some stuff'
 
   constructor(
     private cartService: CartService
   ) { }
 
-  ngOnInit() {    
+  ngOnInit() { 
+      this.cartService.addProp({});  
       this.cartService.currentCart.subscribe(
         item => this.order = item   
       );
-      this.empty = (Object.keys(this.order).length === 0 && this.order.constructor === Object)         
-    console.log(this.order)
+      if (this.order.length > 0) {this.cartMessage = 'Your order'}       
+    console.log(this.order);
   }
 
+ 
+
+  removeItem(Id): void {
+    console.log('id of clicked item ' + Id);
+    this.cartService.removeCartItem(Id);
+  }
 }
