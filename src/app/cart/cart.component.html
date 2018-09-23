@@ -12,20 +12,22 @@
                  *ngIf='order && order.length'>
             <thead>
               <tr>
+                <th></th>
                 <th>Product</th>
                 <th>Code</th>
                 <th>Price</th>
-                <th>Number of items</th>
+                <th>No. of items</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor='let items of order'>
+                <td><img [src]='items.imageUrl' [title]='items.productName'></td>
                 <td>
                   <a [routerLink]="['/products', items.productId]">
                     {{ items.productName }}
                   </a>
-                </td>
+                </td>                
                 <td>{{ items.productCode | lowercase | convertToSpaces: '-' }}</td>
                 <td>{{ items.price | currency:'USD':'symbol':'1.2-2' }}</td>
                 <td>{{ items.quantity }}</td>
@@ -38,11 +40,11 @@
         </div>
       </div>
     </div>
-    <div class="card-footer">
-      {{ sum }}
+    <div class="card-footer">      
+        <p class='total'>Total: {{sum | currency:'USD':'symbol':'1.2-2'}}</p>
         <button class='btn btn-outline-primary'>
             <i class="fa fa-shopping-cart"></i>Buy now
-        </button>
+        </button>      
     </div>
   </div>
   
