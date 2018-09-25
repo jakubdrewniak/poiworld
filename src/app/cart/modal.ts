@@ -13,6 +13,6 @@ export class NgbdModalBasic {
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
-    }
+    
   } 
 }
