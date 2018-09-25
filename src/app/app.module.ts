@@ -9,13 +9,16 @@ import { ProductModule } from './products/product.module';
 import { IntroComponent } from './intro/intro.component';
 import { CartComponent } from './cart/cart.component';
 import { SharedModule } from './shared/shared.module';
+import { NgbdModalBasic } from './cart/modal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     IntroComponent,
-    CartComponent
+    CartComponent,
+    NgbdModalBasic
   ],
   imports: [
     SharedModule,
@@ -29,7 +32,8 @@ import { SharedModule } from './shared/shared.module';
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ], {useHash: true}),
-    ProductModule
+    ProductModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
