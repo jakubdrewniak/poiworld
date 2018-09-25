@@ -1,13 +1,19 @@
 <nav class='navbar navbar-expand navbar-dark bg-dark'>
-  <a class='navbar-brand na-link' routerLinkActive='active' [routerLink]="['/welcome']">{{title}}</a>
-  <ul class='nav nav-tabs'>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/intro']">What is poi?</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
-  </ul>
-  <button class='btn btn-outline-primary' routerLinkActive='active' [routerLink]="['/cart']">
-    <i class="fa fa-shopping-cart"></i> My cart ( {{Notifier}} )
-  </button>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' routerLinkActive='active' [routerLink]="['/welcome']">{{title}}</a>
+    </div>
+    <ul class='nav navbar-nav'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/intro']">What is poi?</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
+    </ul>
+    <ul class='nav navbar-nav navbar-right'>
+      <button class='btn btn-outline-primary' routerLinkActive='active' [routerLink]="['/cart']">
+        <i class="fa fa-shopping-cart"></i> My cart ( {{Notifier}} )
+      </button>
+    </ul>
+  </div>
 </nav>
 <div class='container'>
   <router-outlet></router-outlet>
