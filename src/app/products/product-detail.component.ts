@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 import { CartService } from '../cart/cart.service'
-import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './product-detail.component.html',

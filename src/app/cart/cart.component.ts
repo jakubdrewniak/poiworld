@@ -20,14 +20,16 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit() { 
-      this.cartService.addProp({});  
+      this.cartService.addProp({});
+      //this line kicks addProp method- without it we need to put something to cart
+      //to kick the method  
       this.cartService.currentCart.subscribe(
         item => this.order = item   
       );
       for (let i=0; i < this.order.length; i++) {
         this.sum += this.order[i]['price'] * this.order[i]['quantity']
       };
-      if (this.order.length > 0) {this.cartMessage = 'Your order'}       
+      if (this.order.length > 0) {this.cartMessage = 'Your order'};
     console.log(this.order.length);
   }
 

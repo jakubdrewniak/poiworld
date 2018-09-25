@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
 import { isEmpty } from 'rxjs/operators';
 import { stringify } from '@angular/compiler/src/util';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -9,9 +11,16 @@ import { stringify } from '@angular/compiler/src/util';
 export class CartService {
 
   private newCartSubject = new BehaviorSubject<object>({});
+  //this private variable holds data
   currentCart = this.newCartSubject.asObservable();
+  //setting new subject as a obsevable, which is subscribed in cart.component
 
-  constructor() {     
+  notifier: Observable<number>;
+  private notifySubject: Subject<number>;
+
+  constructor() { 
+    this.notifySubject = new Subject<number>();
+    this.notifier = this.notifySubject.asObservable();    
   }
 
   addProp(item: object) {
@@ -30,7 +39,6 @@ export class CartService {
     this.setLocalStorageOrder(order);
     console.log('prop added')
    }
-   
   }
 
   public getOrder() {
@@ -41,15 +49,20 @@ export class CartService {
   private setLocalStorageOrder (order) {
     localStorage.setItem('mycart', JSON.stringify({order}))
     this.newCartSubject.next(order);
-    console.log('new order set')
-  }
+    console.log('new order set');
+    this.getNotifier();
+ }
 
   removeCartItem(Id) {
     let order = this.getOrder();
     let removedItem = order.findIndex(i => i.productId === Id);
     console.log('index in array of deleted item ' + removedItem);
     order.splice(removedItem, 1);
-    this.setLocalStorageOrder(order);
+    this.setLocalStorageOrder(order);    
+  }
+
+  getNotifier() {
+    
   }
 
 }
