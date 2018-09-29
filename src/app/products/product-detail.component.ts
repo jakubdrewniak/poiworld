@@ -25,7 +25,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
-    //if we only need inital value of activated route, we use snapshot- otherwise
+    //if we only need inital value of activated route, we use snapshot
     if (param) {
       const id = +param;
       this.getProduct(id);
